@@ -1,0 +1,46 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+:root {
+    --main-color: #12121A;
+    --second-color: #1D1D27;
+    --third-color: #00A04F;
+    --fourth-color: #A7A7A7;
+    --fifth-color: #1B2721;
+
+    --white-color: #FFFFFF;
+    --line-color: #7C7C82;
+}
+
+body {background-color: var(--main-color); color: var(--white-color); font-family: "Manrope", sans-serif; font-size: 18px; transition: 0.3s ease;}
+
+.container {display: flex; flex-wrap: wrap; height: 100vh;}
+
+.container .left {display: flex; flex-wrap: wrap; flex-direction: column; border-right: 1px solid var(--line-color); width: 35%;}
+
+    /* Title Block*/
+    .container .left .title_block {display: flex; flex-wrap: wrap; align-items: center; padding: 25px;}
+    .container .left .title_block .icon {border-radius: 100%; border: 2px solid var(--white-color); padding: 10px; width: 55px; height: 55px;}
+    .container .left .title_block .title {margin: 0 0 0 25px;}
+    .container .left .title_block .title div:first-child {font-weight: 700; font-size: 32px;}
+    .container .left .title_block .title div:last-child {color: var(--fourth-color);}
+
+
+    /* Main styling sidebar items*/
+    .container .left .sidebar .item { background-color: var(--second-color); border-top: 0.3px solid var(--line-color); color: var(--fourth-color); display: flex; align-items: center; gap: 16px; padding: 18px 30px; font-weight: 700; font-size: 20px; width: 100%; cursor: pointer; }
+    .container .left .sidebar .item .number { flex-shrink: 0; width: 30px; }
+    .container .left .sidebar .item .group { display: flex; align-items: center; gap: 10px; flex: 1; }
+    .container .left .sidebar .item .icon { width: 24px; height: 24px; background-size: cover; background-repeat: no-repeat; transition: background-image 0.2s; }
+    .container .left .sidebar .item .arrow { flex-shrink: 0; }
+
+    .container .left .sidebar .item:hover { background-color: var(--fifth-color); color: var(--third-color);}
+    .container .left .sidebar .tasks .item .number {width: 60px; flex-shrink: 0;}
+
+
+    /* Icons sidebar */
+    .container .left .sidebar .icon-user { background-image: url('../icons/user_grey.svg'); }
+    .container .left .sidebar .icon-folder { background-image: url('../icons/folder_grey.svg'); }
+    .container .left .sidebar .item:hover .icon-user { background-image: url('../icons/user_green.svg'); }
+    .container .left .sidebar .item:hover .icon-folder { background-image: url('../icons/folder_green.svg'); }
+
+
+.container .right {display: flex; flex-wrap: wrap; flex-direction: column;}

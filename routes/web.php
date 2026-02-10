@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GanntController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [GanntController::class, 'index'])->name('application.index');
