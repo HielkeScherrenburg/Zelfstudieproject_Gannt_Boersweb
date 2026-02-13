@@ -6,7 +6,6 @@
             <div>Houd gemakkelijk dagelijks overzicht</div>
         </div>
     </div>
-
     <div class="sidebar">
         @forelse ($clients as $client)
             <div class="client">

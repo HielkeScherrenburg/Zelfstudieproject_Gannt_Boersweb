@@ -26,7 +26,8 @@ body {background-color: var(--main-color); color: var(--white-color); font-famil
 
 
     /* Main styling sidebar items*/
-    .container .left .sidebar .item { background-color: var(--second-color); border-top: 0.3px solid var(--line-color); color: var(--fourth-color); display: flex; align-items: center; gap: 16px; padding: 18px 30px; font-weight: 700; font-size: 20px; width: 100%; cursor: pointer; }
+    .container .left .sidebar .item { background-color: var(--second-color); border-top: 0.3px solid var(--line-color); color: var(--fourth-color); display: flex; align-items: center; gap: 16px; padding: 18px 30px; font-weight: 700; font-size: 20px; widthsteem
+    Ho: 100%; cursor: pointer; }
     .container .left .sidebar .item .number { flex-shrink: 0; width: 30px; }
     .container .left .sidebar .item .group { display: flex; align-items: center; gap: 10px; flex: 1; }
     .container .left .sidebar .item .icon { width: 24px; height: 24px; background-size: cover; background-repeat: no-repeat; transition: background-image 0.2s; }
@@ -43,4 +44,16 @@ body {background-color: var(--main-color); color: var(--white-color); font-famil
     .container .left .sidebar .item:hover .icon-folder { background-image: url('../icons/folder_green.svg'); }
 
 
-.container .right {display: flex; flex-wrap: wrap; flex-direction: column;}
+.container > .right {display: flex; flex-direction: column; width: 65%; overflow-x: scroll;}
+    .container .right .timeline {font-weight: 700; width: max-content;}
+    .container .right .timeline .months {display: flex; }
+    .container .right .timeline .months > div {background-color: var(--second-color); border-bottom: 0.3px solid var(--line-color); border-right: 0.3px solid var(--line-color); text-align: left; padding: 7px 0 7px 7px;}
+    .container .right .timeline .months > div.active {background-color: var(--fifth-color); border: 0.3px solid var(--third-color);}
+
+    .container .right .timeline .weeks {display: flex; }
+    .container .right .timeline .weeks > div {background-color: var(--second-color); border-bottom: 0.3px solid var(--line-color); border-right: 0.3px solid var(--line-color); text-align: left; padding: 7px 0 7px 7px;}
+    .container .right .timeline .weeks > div.active {background-color: var(--fifth-color); border: 0.3px solid var(--third-color);}
+
+    .container .right .timeline .days > div {background-color: var(--second-color); border-bottom: 0.3px solid var(--line-color); border-right: 0.3px solid var(--line-color); text-align: center; padding: 7px 0;}
+    .container .right .timeline .days > div.active {background-color: var(--fifth-color); border: 0.3px solid var(--third-color)}
+    .container .right .grid > div {border-right: 0.3px solid var(--line-color); border-top: 0.3px solid var(--line-color); height: 100vh;}
