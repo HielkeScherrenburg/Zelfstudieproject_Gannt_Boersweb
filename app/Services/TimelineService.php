@@ -59,7 +59,7 @@ class TimelineService
 
     }
 
-    public function getWorkDaysOfMonth() {
+    public function getWorkDaysOfYear() {
 
         $year = Carbon::now()->year;
         $day = Carbon::create($year)->startOfYear();

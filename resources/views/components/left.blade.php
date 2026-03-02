@@ -6,60 +6,57 @@
             <div>Houd gemakkelijk dagelijks overzicht</div>
         </div>
     </div>
+
     <div class="sidebar">
         @forelse ($clients as $client)
-            <div class="client">
+            @php $cIdx = $loop->iteration; @endphp
 
-                <div class="item">
-                    <div class="number">{{ $loop->iteration }}</div>
+            <div class="client">
+                <div class="item" data-client-id="{{ $client->id }}">
+                    <div class="number">{{ $cIdx }}</div>
                     <div class="group">
                         <div class="icon icon-user"></div>
                         <div class="name">{{ $client->name }}</div>
                     </div>
-                    <img class="arrow" src="{{ asset('icons/chevron-up.svg') }}" alt="Toggle projects">
+                    <img class="arrow" src="{{ asset('icons/chevron-up.svg') }}" alt="Toggle">
                 </div>
 
                 <div class="projects">
                     @forelse ($client->projects as $project)
-                        <div class="project">
+                        @php $pIdx = $loop->iteration; @endphp
 
-                            <div class="item">
-                                <div class="number">{{ $loop->parent->iteration }}.{{ $loop->iteration }}</div>
+                        <div class="project">
+                            <div class="item" data-project-id="{{ $project->id }}">
+                                <div class="number">{{ $cIdx }}.{{ $pIdx }}</div>
                                 <div class="group">
                                     <div class="icon icon-folder"></div>
                                     <div class="name">{{ $project->name }}</div>
                                 </div>
-                                <img class="arrow" src="{{ asset('icons/chevron-up.svg') }}" alt="Toggle tasks">
+                                <img class="arrow" src="{{ asset('icons/chevron-up.svg') }}" alt="Toggle">
                             </div>
 
                             <div class="tasks">
                                 @forelse ($project->tasks as $task)
                                     <div class="task item">
-                                        <div class="number">
-                                            {{ $loop->parent->parent->iteration }}.{{ $loop->parent->iteration }}.{{ $loop->iteration }}
-                                        </div>
+                                        <div class="number">{{ $cIdx }}.{{ $pIdx }}.{{ $loop->iteration }}</div>
                                         <div class="group">
-                                            <div class="name">{{ $task->description }}</div>
+                                            <div title="{{ $task->description }}" class="name">{{ $task->description }}</div>
                                         </div>
                                     </div>
                                 @empty
-                                    <div class="task item">Geen tasks gevonden</div>
+                                    <div class="task item">Geen taken gevonden</div>
                                 @endforelse
                             </div>
+                        </div>
 
-                        </div>
                     @empty
-                        <div class="project">
-                            <div class="item">Geen projecten gevonden</div>
-                        </div>
+                        <div class="project"><div class="item">Geen projecten gevonden</div></div>
                     @endforelse
                 </div>
+            </div>
 
-            </div>
         @empty
-            <div class="client">
-                <div class="item">Geen klanten gevonden</div>
-            </div>
+            <div class="client"><div class="item">Geen klanten gevonden</div></div>
         @endforelse
     </div>
 </div>
